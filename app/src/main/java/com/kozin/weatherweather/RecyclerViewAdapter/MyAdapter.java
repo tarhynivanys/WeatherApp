@@ -25,6 +25,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         this.weatherForecastResult = articles;
     }
 
+    /**
+     * holder for views
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @NonNull
     @Override
     public MyAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -34,6 +40,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         return new MyViewHolder(view);
     }
 
+    /**
+     * placing data into params and displaying them
+     * @param viewHolder
+     * @param position
+     */
     @Override
     public void onBindViewHolder(MyAdapter.MyViewHolder viewHolder, final int position) {
         String dateTime = weatherForecastResult.getList().get(position).getDt_txt() + "";
@@ -50,11 +61,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     }
 
+
     @Override
     public int getItemCount() {
         return weatherForecastResult.getList().size();
     }
 
+    /**
+     * initialization of data keepers(params)
+     */
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView tvDateTime, tvTemper, tvDescription;
