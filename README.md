@@ -4,6 +4,8 @@ weather app for android (java)
 
 ## Getting Started
 
+(api keys were deleted from app)
+
 Open project in Android Studio and wait, until build is over
 Then just run the app by the clicking Shift+F10 or click at green triangle at top right of IDE
 
