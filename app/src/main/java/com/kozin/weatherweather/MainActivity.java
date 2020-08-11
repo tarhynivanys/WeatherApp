@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //initialize the SDK
-        Places.initialize(getApplicationContext(), "AIzaSyATiSBmiHuJsMnVkwb0K2YDosHMNE6G6Jo");
+        Places.initialize(getApplicationContext(), /*here enter google api key*/"");
 
         //create a new Places client instance
         PlacesClient placesClient = Places.createClient(this);
