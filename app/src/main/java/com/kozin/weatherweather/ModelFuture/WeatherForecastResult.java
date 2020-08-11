@@ -1,26 +1,13 @@
 package com.kozin.weatherweather.ModelFuture;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-import com.kozin.weatherweather.ModelCurrent.*;
-
 import java.util.List;
 
 public class WeatherForecastResult {
-//    @SerializedName("cod")
-//    @Expose
+
     public String cod;
-//    @SerializedName("message")
-//    @Expose
     public int message;
-//    @SerializedName("cnt")
-//    @Expose
     public int cnt;
-//    @SerializedName("list")
-//    @Expose
     public List<MyList> list;
-//    @SerializedName("city")
-//    @Expose
     public City city;
 
     public String getCod() {

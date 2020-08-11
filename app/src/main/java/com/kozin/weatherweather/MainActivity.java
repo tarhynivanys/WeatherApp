@@ -119,7 +119,6 @@ public class MainActivity extends AppCompatActivity {
                         tvTempValue.setText(String.format("%s°", weatherResult.getMain().getTemp()));
                         tvValueHumidity.setText(String.format("%d%%", weatherResult.getMain().getHumidity()));
                         tvValueFeelsLike.setText(String.format("%s°", weatherResult.getMain().getFeels_like()));
-//                        tvValueFeelsLike.setText(weatherResult.getWeather().get(0).getDescription() + "");
                         tvPressure.setText(String.format("%d hpa", weatherResult.getMain().getPressure()));
 
                         Log.d("TAG", "USPEH");
