@@ -20,9 +20,4 @@ public interface IOpenWeatherMap {
                                                                @Query("appid") String appid,
                                                                @Query("units") String unit);
 
-//    @GET("forecast")
-//    Call<List<WeatherForecastResult>> getWeatherForecastByCity(@Query("q") String city_name,
-//                                                               @Query("appid") String appid,
-//                                                               @Query("units") String unit);
-
 }
