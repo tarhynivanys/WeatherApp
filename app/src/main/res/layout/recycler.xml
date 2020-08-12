@@ -11,8 +11,7 @@
         android:id="@+id/rvRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:padding="10dp"
+        android:padding="@dimen/padding"
         tools:listitem="@layout/row" />
 
 </RelativeLayout>

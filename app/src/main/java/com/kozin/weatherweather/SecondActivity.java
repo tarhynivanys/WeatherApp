@@ -50,7 +50,7 @@ public class SecondActivity extends AppCompatActivity {
 
         RetrofitClient.getInstance()
                 .getJSONApi()
-                .getWeatherForecastByCity(autocompleteCityName, Common.API_ID, "metric")
+                .getWeatherForecastByCity(autocompleteCityName, Common.WEATHER_API_ID, "metric")
                 .enqueue(new Callback<WeatherForecastResult>() {
                     @Override
                     public void onResponse(Call<WeatherForecastResult> call, Response<WeatherForecastResult> response) {
@@ -65,6 +65,7 @@ public class SecondActivity extends AppCompatActivity {
                         System.out.println("" + weatherForecastResults);
 
                         Log.d("TAG", "YEEEEEEEEEEEEEEEEEEEEEEES");
+
                     }
 
                     @Override

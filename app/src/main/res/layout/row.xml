@@ -4,23 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp"
-    android:layout_margin="15dp">
+    android:padding="@dimen/padding"
+    android:layout_margin="@dimen/cardview_margin">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#03A9F4"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="@dimen/padding">
 
         <TextView
             android:id="@+id/tvDateTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
-            android:text="TextView"
-            android:textSize="40sp" />
+            android:textSize="@dimen/cardview_txt_datetime_size" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -29,8 +28,8 @@
 
             <ImageView
                 android:id="@+id/imgForecastIcon"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="@dimen/cardview_img_size"
+                android:layout_height="@dimen/cardview_img_size"
                 android:src="@drawable/humidity"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignEnd="@id/imgForecastIcon"
                 android:fontFamily="sans-serif-medium"
-                android:textSize="30sp"
+                android:textSize="@dimen/cardview_txt_size"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imgForecastIcon"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -53,15 +52,12 @@
                 android:layout_height="wrap_content"
                 android:layout_alignEnd="@id/imgForecastIcon"
                 android:fontFamily="sans-serif-medium"
-                android:textSize="30sp"
+                android:textSize="@dimen/cardview_txt_size"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imgForecastIcon" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
     </LinearLayout>
 

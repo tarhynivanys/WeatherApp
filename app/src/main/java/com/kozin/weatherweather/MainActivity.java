@@ -33,6 +33,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.kozin.weatherweather.Common.Common.GOOGLE_AUTOCOMPLETE_API_ID;
+
 public class MainActivity extends AppCompatActivity {
 
     private ImageView imgIcon;
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //initialize the SDK
-        Places.initialize(getApplicationContext(), /*here enter google api key*/"");
+        Places.initialize(getApplicationContext(), GOOGLE_AUTOCOMPLETE_API_ID);
 
         //create a new Places client instance
         PlacesClient placesClient = Places.createClient(this);
@@ -104,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         //Retrofit library initialization
         RetrofitClient.getInstance()
                 .getJSONApi()
-                .getWeatherByCity(autocompleteCityName, Common.API_ID, "metric")
+                .getWeatherByCity(autocompleteCityName, Common.WEATHER_API_ID, "metric")
                 .enqueue(new Callback<WeatherResult>() {
                     @Override
                     public void onResponse(Call<WeatherResult> call, Response<WeatherResult> response) {
