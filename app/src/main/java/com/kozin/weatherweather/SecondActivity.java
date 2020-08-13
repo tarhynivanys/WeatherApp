@@ -18,7 +18,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.kozin.weatherweather.MainActivity.autocompleteCityName;
+import static com.kozin.weatherweather.MainActivity.cityName;
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -37,8 +37,6 @@ public class SecondActivity extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        Log.i("TAG", " " + autocompleteCityName);
-
         parseJson();
 
     }
@@ -50,7 +48,7 @@ public class SecondActivity extends AppCompatActivity {
 
         RetrofitClient.getInstance()
                 .getJSONApi()
-                .getWeatherForecastByCity(autocompleteCityName, Common.WEATHER_API_ID, "metric")
+                .getWeatherForecastByCity(cityName, Common.WEATHER_API_ID, "metric")
                 .enqueue(new Callback<WeatherForecastResult>() {
                     @Override
                     public void onResponse(Call<WeatherForecastResult> call, Response<WeatherForecastResult> response) {

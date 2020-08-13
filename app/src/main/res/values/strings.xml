@@ -1,8 +1,13 @@
 <resources>
     <string name="app_name">Weather Weather</string>
+    
     <string name="feels_like_txt">Feels like</string>
     <string name="humidity_txt">Humidity</string>
     <string name="pressure_txt">Pressure</string>
     <string name="refresh_button_txt">Refresh</string>
     <string name="weather_button_txt">weather</string>
+    <string name="map">MAP</string>
+
+    <string name="map_key" translatable="false">AIzaSyBocuubdccM0sY3U6LUOtmmnyeoRSMJBpQ</string>
+
 </resources>

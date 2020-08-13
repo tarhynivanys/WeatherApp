@@ -42,7 +42,9 @@ public class MainActivity extends AppCompatActivity {
     private RelativeLayout rlWeather;
     private RecyclerView recyclerView;
 
-    static String autocompleteCityName;
+    private String autocompleteCityName;
+
+    static String cityName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
             public void onPlaceSelected(@NonNull Place place) {
                 Log.i("TAG", "Place: " + place.getName() + ", " + place.getId());
                 autocompleteCityName = place.getName();
+                cityName = autocompleteCityName;
             }
 
             @Override
@@ -93,20 +96,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * by refresh button click method
-     *
-     * by pressing refresh button, you will be able to see current weather
-     * of the selected city
-     * @param view
+     * method of a retrofit library initialization
      */
-    public void refreshInfo(View view) {
-
+    public void parseJSON() {
         Log.i("TAG", " " + autocompleteCityName);
 
         //Retrofit library initialization
         RetrofitClient.getInstance()
                 .getJSONApi()
-                .getWeatherByCity(autocompleteCityName, Common.WEATHER_API_ID, "metric")
+                .getWeatherByCity(cityName, Common.WEATHER_API_ID, "metric")
                 .enqueue(new Callback<WeatherResult>() {
                     @Override
                     public void onResponse(Call<WeatherResult> call, Response<WeatherResult> response) {
@@ -135,17 +133,59 @@ public class MainActivity extends AppCompatActivity {
                 });
 
         rlWeather.setVisibility(View.VISIBLE);
+    }
 
+    /**
+     * refresh button on click method
+     *
+     * @param view
+     */
+    public void refreshInfo(View view) {
+        cityName = autocompleteCityName;
+        parseJSON();
     }
 
     /**
      * by pressing weather button, you will redirect onto next activity (SecondActivity.class),
      * where you will be able to see weather for the next 5 days, divided by 3 hours per forecast
+     *
      * @param view
      */
     public void weatherInfo(View view) {
         Intent myIntent = new Intent(view.getContext(), SecondActivity.class);
+        startActivity(myIntent);
+
+    }
+
+    /**
+     * by pressing map button, you will redirect onto map fragment
+     *
+     * @param view
+     */
+    public void openGoogleMap(View view) {
+        Intent myIntent = new Intent(view.getContext(), MapActivity.class);
         startActivityForResult(myIntent, 0);
 
     }
+
+    /**
+     *
+     * in this method you will get city name from MapActivity.class,
+     * received from retrofit instance by latitude and longitude
+     *
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == RESULT_OK && requestCode == 0) {
+            cityName = data.getStringExtra("city");
+            parseJSON();
+        }
+
+    }
+
 }
