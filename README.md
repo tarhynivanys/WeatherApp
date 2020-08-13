@@ -14,6 +14,9 @@ Tap at the fragment, enter city(English letters only), then just tup the refresh
 For forecast you need firstly choose city, than tap refresh button, than tap weather button
 After that ypu will be able to see forecast for 5 days divided by 3 hour
 
+not every city was added to openweathermap, so sometimes, when you click on city,
+that you never heard of, app will probably crash (trying to fix nov)
+
 ### Prerequisites
 
 Android Studio
