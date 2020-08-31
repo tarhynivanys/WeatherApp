@@ -15,7 +15,7 @@ For forecast you need firstly choose city, than tap refresh button, than tap wea
 After that ypu will be able to see forecast for 5 days divided by 3 hour
 
 not every city was added to openweathermap, so sometimes, when you click on city,
-that you never heard of, app will probably crash (trying to fix nov)
+that you never heard of, app will probably crash
 
 ### Prerequisites
 
